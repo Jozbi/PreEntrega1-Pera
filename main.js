@@ -28,7 +28,7 @@ while (precio != 0);
 document.write(`<h2>Pais de Origen: ${paisVendedor}.</h2>`);
 document.write(`<h2>Total factura FOB: $${listaPrecios}</h2>`);
 
-//Solicito el valor del Flete y Seguro
+//Solicito el valor del Fleteo
 
 while(true) {
     let flete = parseInt (prompt(
@@ -45,15 +45,13 @@ while(true) {
     }
 }
 
-document.write(`<h2>Total Factura CIF: $${listaPrecios}</h2>`);
-
 //Agrego Valor Seguro
 
 let seguro = listaPrecios * 1/100;
 
 listaPrecios += seguro;
 
-document.write(`<h2>Total Base Imponible: $${listaPrecios}</h2>`);
+document.write(`<h2>Total Factura CIF || Base Imponible: $${listaPrecios}</h2>`);
 
 //Calculo Impuestos Aduaneros
 
