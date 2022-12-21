@@ -17,7 +17,7 @@ do {
     precio = parseInt (prompt(
         "Ingrese el monto de los productos 1 a 1 o el monto total de la factura. (Ingrese 0 cuando haya terminado)"
     ));
-    if (esNumero(precio || precio == 0)) {
+    if (esNumero(precio) || precio == 0) {
         listaPrecios += precio;
     } else {
         alert("No es un numero")
@@ -51,13 +51,14 @@ let seguro = listaPrecios * 1/100;
 
 listaPrecios += seguro;
 
-document.write(`<h2>Total Factura CIF || Base Imponible: $${listaPrecios}</h2>`);
+
+document.write(`<h2>Total Factura CIF || Base Imponible: $${listaPrecios.toFixed(2)}</h2>`);
 
 //Calculo Impuestos Aduaneros
 
 let impuestosAduaneros = listaPrecios * 0.1 + listaPrecios * 0.5/100;
 
-document.write(`<h2>Total Impuestos Aduaneros: $${impuestosAduaneros}</h2>`);
+document.write(`<h2>Total Impuestos Aduaneros: $${impuestosAduaneros.toFixed(2)}</h2>`);
 
 //Calculo Impuestos No Aduaneros
 
@@ -65,14 +66,12 @@ let baseIva = impuestosAduaneros + listaPrecios;
 
 let impuestosNoAduaneros = baseIva * 0.21 + baseIva * 0.2 + baseIva * 6/100 + baseIva * 2.5/100;
 
-document.write(`<h2>Total Impuestos No Aduaneros: $${impuestosNoAduaneros}</h2>`);
+document.write(`<h2>Total Impuestos No Aduaneros: $${impuestosNoAduaneros.toFixed(2)}</h2>`);
 
 //Totales
 
 let totalImpuestos = impuestosAduaneros + impuestosNoAduaneros;
-let totalFinal = totalImpuestos + listaPrecios;
-totalFinal = totalFinal.toFixed(2);
-document.write(`<h2>Total Carga Impositiva: $${totalImpuestos}</h2>`);
+document.write(`<h2>Total Carga Impositiva: $${totalImpuestos.toFixed(2)}</h2>`);
 
 //Forma de Pago
 let montoCuotas = 0;
@@ -94,4 +93,4 @@ while (true) {
         alert ("Ingrese un numero valido");
     }
 }
-document.write(`<h2>Usted decidio pagar la carga impositiva en ${cuotas} cuota/as de: $${montoCuotas}</h2>`);
+document.write(`<h2>Usted decidio pagar la carga impositiva en ${cuotas} cuota/as de: $${montoCuotas.toFixed(2)}</h2>`);
