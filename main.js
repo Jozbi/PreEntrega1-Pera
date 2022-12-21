@@ -75,7 +75,6 @@ let totalImpuestos = impuestosAduaneros + impuestosNoAduaneros;
 let totalFinal = totalImpuestos + listaPrecios;
 totalFinal = totalFinal.toFixed(2);
 document.write(`<h2>Total Carga Impositiva: $${totalImpuestos}</h2>`);
-document.write(`<h2>Total Final: $${totalFinal}</h2>`);
 
 //Forma de Pago
 let montoCuotas = 0;
