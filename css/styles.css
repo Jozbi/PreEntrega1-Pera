@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*Header*/
+.header__logo {
+    width: 100px;
+}
+.nav-item {
+    margin-right: 2rem;
+    font-size: 1.1rem;
+}
+/*Hero*/
+.hero h1 {
+    margin: 1rem 0;
+    text-align: center;
+}
+h2 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
